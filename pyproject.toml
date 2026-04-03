@@ -1,0 +1,91 @@
+[project]
+name = "geneticalgorithm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pyright>=1.1.408",
+    "ruff>=0.15.9",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking — move type-only imports para TYPE_CHECKING
+    "ANN", # flake8-annotations — exige type hints
+    "PYI", # flake8-pyi — boas práticas para stubs
+    "RUF", # regras do Ruff
+]
+ignore = [
+    "ANN101", # missing type annotation for `self`
+    "ANN102", # missing type annotation for `cls`
+] [tool.ruff.lint.isort]
+known-first-party = ["my_project"] [tool.ruff.lint.flake8-type-checking]
+strict = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+# ─── PyRight ─────────────────────────────────────────────────────────────────
+
+[tool.pyright]
+pythonVersion = "3.13"
+pythonPlatform = "win32"
+
+# Configurações de type checking
+typeCheckingMode = "strict"
+
+# Opcional: habilitar análise de dependências
+reportMissingImports = true
+reportMissingModuleSource = true
+
+# Ignorar arquivos específicos
+exclude = [
+    "**/node_modules/**",
+    "**/__pycache__/**",
+    "**/venv/**",
+    "**/dist/**",
+    "**/build/**",
+]
+
+# Configurações de análise
+reportGeneralTypeIssues = true
+reportUntypedFunction = true
+reportUntypedDecorators = true
+reportUnnecessaryIsInstance = true
+reportInvalidTypeVar = true
+reportInvalidNext = true
+
+# Habilitar análise de tipo em arquivos .py
+# (por padrão, PyRight ignora arquivos sem type hints)
+allowMissingImports = true
+allowTypedDicts = true
+
+# Opcional: usar `pyproject.toml` como configuração principal
+# (o PyRight já busca automaticamente o `pyproject.toml`)
+# configPath = "pyproject.toml"
+
+# ─── Optional: integração com VS Code ───────────────────────────────────────
+
+# Se você usa VS Code, pode adicionar:
+[tool.vscode]
+settings = {
+   "python.analysis.typeCheckingMode": "strict",
+   "python.defaultInterpreterPath": "python3",
+ }

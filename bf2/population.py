@@ -1,12 +1,7 @@
 import random
 from fitness_function import calculate_fitness_bf2
 
-number_vars: int = 2
-lower_bound: float = -50.0
-upper_bound: float = 50.0
-population_size: int = 100
-
-def create_initial_population() -> list[list[float]]:
+def create_initial_population(population_size: int, lower_bound: float, upper_bound: float) -> list[list[float]]:
     population: list[list[float]] = []
     
     for _ in range(population_size):

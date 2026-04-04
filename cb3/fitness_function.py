@@ -1,4 +1,4 @@
-def calculate_fitness_bf2(individual: list[float]) -> float:
+def calculate_fitness_cb3(individual: list[float]) -> float:
     x1: float = individual[0]
     x2: float = individual[1]
     

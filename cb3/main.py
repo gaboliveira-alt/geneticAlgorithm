@@ -1,5 +1,5 @@
 from genetic_algorithm import run_genetic_algorithm, TOTAL_RUNS
-
+from print_result import print_table_results
 
 if __name__ == "__main__":
     success_count: int = 0
@@ -20,10 +20,4 @@ if __name__ == "__main__":
     success_rate: float = (success_count / TOTAL_RUNS) * 100
     average_nfe: float = total_nfe / TOTAL_RUNS
     
-    print("\n" + "="*40)
-    print("         RESULTADOS FINAIS")
-    print("="*40)
-    print("Problema: Camel Back - 3 Three Hump (CB3)")
-    print(f"Taxa de Sucesso (SR): {success_rate:.2f}%")
-    print(f"Média de NFE: {average_nfe:.2f}")
-    print("="*40)
+    print_table_results()

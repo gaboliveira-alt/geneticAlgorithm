@@ -1,6 +1,4 @@
-from main import success_rate, average_nfe
-
-def print_table_results() -> None:
+def print_table_results(success_rate: float, average_nfe: float) -> None:
     print("\n" + "="*40)
     print("         RESULTADOS FINAIS")
     print("="*40)

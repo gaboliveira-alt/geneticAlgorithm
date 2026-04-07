@@ -1,5 +1,5 @@
 from genetic_algorithm import run_genetic_algorithm, TOTAL_RUNS
-from print_result import print_table_results
+from print_table import print_table_results
 
 if __name__ == "__main__":
     success_count: int = 0
@@ -20,4 +20,4 @@ if __name__ == "__main__":
     success_rate: float = (success_count / TOTAL_RUNS) * 100
     average_nfe: float = total_nfe / TOTAL_RUNS
     
-    print_table_results()
+    print_table_results(success_rate, average_nfe)
